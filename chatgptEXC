@@ -1,0 +1,8 @@
+from openai import OpenAI
+client = OpenAI(base_url = "https://polza.ai/api/v1",api_key = "pza_h1NOhJmCih4qcOkN9U8r1hjrItw1oLzv",)
+completion = client.chat.completions.create(model = "openai/gpt-6.1-sol", messages = [{
+    "role": "user", 
+    "content": "Почему на сайте hh.ru так мало вакансий программист 1с?"
+    }]
+    )
+print(completion.choices[0].message.content)
